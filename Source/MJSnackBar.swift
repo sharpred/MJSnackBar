@@ -80,7 +80,7 @@ open class MJSnackBar: UIView {
     public init(onView: UIView) {
         
         super.init(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-
+        print("SnackBar initialised");
         self.backgroundColor = UIColor(red:0.11, green:0.11, blue:0.11, alpha:0.95)
         self.showingOnView = onView
         

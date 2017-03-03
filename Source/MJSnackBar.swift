@@ -134,12 +134,15 @@ open class MJSnackBar: UIView {
     /// Triggered when the user touches the SnackBar
     /// Calls snackBarActionTriggered of the delegate if there is one
     @objc fileprivate func snackBarTouched() {
-        
+        print("snackbar touch event");
         if let data = self.currentlyDisplayedData {
             if data.action != nil && data.action!.characters.count > 0 {
+                print("snackbar touch data issue");
                 self.hide(afterDelay: false, reason: .user) { }
                 self.delegate?.snackBarActionTriggered(with: data)
             }
+        } else {
+            print("snackbar touch let issue");
         }
 
     }

@@ -85,10 +85,10 @@ open class MJSnackBar: UIView {
         self.showingOnView = onView
         
         // Allow user to interract with the bar
-        self.isUserInteractionEnabled = YES
+        self.isUserInteractionEnabled = true
         
         // Add gesture for action
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.snackBarTouched))
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.snackBarTouched(_:)))
         tapGesture.numberOfTapsRequired = 1
         self.addGestureRecognizer(tapGesture)
         
@@ -133,7 +133,7 @@ open class MJSnackBar: UIView {
     
     /// Triggered when the user touches the SnackBar
     /// Calls snackBarActionTriggered of the delegate if there is one
-    public func snackBarTouched() {
+    public func snackBarTouched(_ sender: UITapGestureRecognizer) {
         print("snackbar touch event");
         if let data = self.currentlyDisplayedData {
             if data.action != nil && data.action!.characters.count > 0 {

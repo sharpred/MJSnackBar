@@ -85,7 +85,7 @@ open class MJSnackBar: UIView {
         self.showingOnView = onView
         
         // Allow user to interract with the bar
-        self.isUserInteractionEnabled = true
+        self.isUserInteractionEnabled = YES
         
         // Add gesture for action
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.snackBarTouched))
